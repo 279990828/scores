@@ -26,16 +26,16 @@ def logoin(user,pw,headers,URL):
     img_url=html.find('img',{'onclick':"this.src='captcha?'+Date.now()+Math.random()"})['src']
     open('picture.jpeg','wb').write(session.get(URL+img_url).content)
     m=Image.open('picture.jpeg')
-    mode=True
-    try:
-        captcha=getText('picture.jpeg')
-    except:
-        mode=False
+#     mode=True
+#     try:
+#         captcha=getText('picture.jpeg')
+#     except:
+#         mode=False
     m.show()
-    if mode:
-        print u'\n验证码:'+captcha+u'(正确回车跳过，错误输入正确的验证码)'
-    else:
-        print u'\n验证码:'
+#     if mode:
+#         print u'\n验证码:'+captcha+u'(正确回车跳过，错误输入正确的验证码)'
+#     else:
+    print u'\n验证码:'
     cap=raw_input()
     m.close()
     if cap !='':
@@ -82,34 +82,34 @@ def logoin(user,pw,headers,URL):
         return session,2
     
 
-def getText(name):
-    tmpfile = tempfile.NamedTemporaryFile(prefix="tess_")
-    output_file_name_base=tmpfile.name
-    output_file_name = '%s.txt' % output_file_name_base
-    oscommand=sys.path[0]+'/Tesseract-OCR/tesseract '+name+' '+output_file_name_base
-    os.system(oscommand)
-    f = open(output_file_name)
-    return f.read().strip()
+# def getText(name):
+#     tmpfile = tempfile.NamedTemporaryFile(prefix="tess_")
+#     output_file_name_base=tmpfile.name
+#     output_file_name = '%s.txt' % output_file_name_base
+#     oscommand=sys.path[0]+'/Tesseract-OCR/tesseract '+name+' '+output_file_name_base
+#     os.system(oscommand)
+#     f = open(output_file_name)
+#     return f.read().strip()
 
-def pwd_input():
-    chars=[]
-    while True:
-        try:
-            new_char=msvcrt.getch().decode(encoding="utf-8")
-        except:
-            return ''
-        if new_char in '\r\n':
-            break
-        elif new_char=='\b':
-            if chars:
-                del chars[-1]
-                msvcrt.putch('\b'.encode(encoding='utf-8'))
-                msvcrt.putch( ' '.encode(encoding='utf-8'))
-                msvcrt.putch('\b'.encode(encoding='utf-8'))
-        else:
-            chars.append(new_char)
-            msvcrt.putch('*'.encode(encoding='utf-8'))
-    return(''.join(chars))
+# def pwd_input():
+#     chars=[]
+#     while True:
+#         try:
+#             new_char=msvcrt.getch().decode(encoding="utf-8")
+#         except:
+#             return ''
+#         if new_char in '\r\n':
+#             break
+#         elif new_char=='\b':
+#             if chars:
+#                 del chars[-1]
+#                 msvcrt.putch('\b'.encode(encoding='utf-8'))
+#                 msvcrt.putch( ' '.encode(encoding='utf-8'))
+#                 msvcrt.putch('\b'.encode(encoding='utf-8'))
+#         else:
+#             chars.append(new_char)
+#             msvcrt.putch('*'.encode(encoding='utf-8'))
+#     return(''.join(chars))
                 
 Agent=[
     'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko',
