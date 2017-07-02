@@ -1,0 +1,10 @@
+6599ec38c1a3b564b6743fa044892e6e  ./ner.model
+a86ac108f70cb75f01fc4eb590b62cda  ./cws.model
+f1d5daa61cac15167517a60740a95c0b  ./parser.model
+423d6adc4b174bf44958905078da6a1c  ./pos.model
+bf287fab58c64a0c1a1de159b5b7ec70  ./changelog
+59903e3038aa54903dbf48d718f5f75f  ./srl/prg.model
+81d883716ce09f79f3216ffcda9a6db2  ./srl/Chinese.xml
+8c6fa3705a778daa636c996d82ca17aa  ./srl/srl.model
+52231a85dc6a119e87eb3ff86c9ff005  ./srl/srl.cfg
+f2a9e6487b3ce65e8c025e8be51096e6  ./version
